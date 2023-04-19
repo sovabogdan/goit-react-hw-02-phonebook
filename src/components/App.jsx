@@ -43,16 +43,20 @@ export default class App extends Component {
       };
     });
   };
+    
+    
   render() {
     const normalizedFilter = this.state.filter.toLowerCase();
         const newContacts = this.state.contacts.filter(person =>
       person.name.toLowerCase().includes(normalizedFilter)
     );
-
+     const oldContact = (values)=>this.state.contacts.find(
+      person => person.name.toLowerCase() === values.toLowerCase()
+    );
     return (
       <Container>
       <Title>Phonebook</Title>
-        <ContactsForm submitForm={this.addContact} />  
+        <ContactsForm submitForm={this.addContact} oldContact={oldContact} />  
         <Filter filter={this.state.filter} onFilter={this.onFilter} />
       <ContactList contactsInfo={newContacts} deleteContact={this.onDelete}/>
       </Container>
