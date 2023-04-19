@@ -46,11 +46,12 @@ export default class App extends Component {
     
     
   render() {
-    const normalizedFilter = this.state.filter.toLowerCase();
-        const newContacts = this.state.contacts.filter(person =>
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+        const newContacts = contacts.filter(person =>
       person.name.toLowerCase().includes(normalizedFilter)
     );
-     const oldContact = (values)=>this.state.contacts.find(
+     const oldContact = (values)=>contacts.find(
       person => person.name.toLowerCase() === values.toLowerCase()
     );
     return (
