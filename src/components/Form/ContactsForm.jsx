@@ -26,7 +26,7 @@ class ContactsForm extends Component{
        return (
             <Form onSubmit={this.handleSubmit}>
                 <Label htmlFor='name'>
-                   Name
+                   Name:
                 </Label>
                     <ContactInput
                         onChange={this.handleChange}
@@ -40,7 +40,7 @@ class ContactsForm extends Component{
                     />
                 
                 <Label htmlFor='number'>
-                   Number
+                   Number:
                 </Label>
                     <ContactInput
                         onChange={this.handleChange}
